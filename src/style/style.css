@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Poppins:wght@300;400&display=swap');
+
+
+*{
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{ 
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+button{
+  background-color: #ffff;
+  border: none;
+  padding: 12px;
+  margin: 10px;
+  top:-10px;
+}
+.skip-content {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  color: #ffff;
+  z-index: 100;
+}
+.skip-content:focus{
+  color: rgb(0, 0, 0);
+
+}
+
+#toggle-menu {
+  cursor: pointer;
+  font-size: 3em;
+}
+.burger{
+  position: absolute;
+  right: -5px;  
+  margin: 30px;
+  display: flex;
+  justify-content: end;
+  align-items:flex-end;
+  flex-direction: column;
+}
+
+.bar-nav{
+  margin: 1px;
+  width: 20px;
+  height: 5px;
+  border-radius: 20px;
+  background-color: black;
+}
+
+
+.navbar{
+  font-family: 'Poppins';
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo{
+  color: rgb(255, 225, 0);
+  margin: 1em;
+}
+.nav-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* margin: 1em; */
+}
+
+.nav-item a{
+  margin: 1em;
+  text-align: center;
+  padding:12px;
+  color: black;
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+}
+
+.hero{
+  background: url(../public/images/heros/hero-image_2.jpg);
+  background-size:cover;
+	background-position: center;
+	min-height: 80vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align:center;
+	color: white;
+  margin-bottom: 5em;
+}
+
+.hero-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.hero-item > h2{
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+.hero-item > p{
+  font-family: 'Montserrat';
+  font-size: 1rem;
+  margin-bottom: 2px;
+  padding-bottom: 2px;
+}
+.line{
+  background-color: #ffff;
+  width: 200px;
+  height: 2px;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+main > h2{
+  margin-top: 0px;
+  font-family: 'Poppins';
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.restaurant-list{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: 5em;
+  margin: 1em;
+}
+
+.card {
+  box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.75);
+  background-color: #f8f6ed;
+  width: 18em;
+  border-radius: 15px;
+  
+}
+.card-img{
+  width: 18em;
+  height: 250px;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.card-review{
+  font-family: 'poppins';
+  margin: 0px 20px 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-detail{
+  margin: 0.8em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical; 
+  width: 250px;
+  overflow: hidden;
+}
+.card-detail > h2{
+  font-family: 'Poppins';
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 10px 0px 0px 10px;
+}
+.card-detail > p{
+  font-family: 'Montserrat';
+  font-size: 15px;
+}
+
+footer{
+  font-family: 'poppins';
+  color: rgb(255, 255, 255);
+  font-size: 23px;
+  background-color: rgb(255, 140, 0);
+  padding: 0.3  em;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 500px) {
+  .navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .restaurant-list{
+    grid-template-columns: repeat(1,1fr);
+  }
+  .navbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  .nav-item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      height: 50%;
+      position: absolute;
+      transform: translate(0px, 0);
+      transition: transform 0.3s ease-in-out;
+      background-color: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(11px);
+      -webkit-backdrop-filter: blur(11px); 
+      top: 67px;
+  }
+  .nav-item__active{
+    visibility: hidden;
+    transform: translate(500, 0);
+  }
+    .nav-item a{
+      text-align: center;
+      font-weight: bold;
+      color:rgb(255, 140, 0);
+
+    }
+    
+}
+
+@media screen and (min-width: 550px) {
+  .restaurant-list{
+    grid-template-columns: repeat(1,1fr);
+    gap: 2em;
+  }
+  .burger{
+    visibility: hidden;
+  }
+  
+}
+
+
+@media screen and (min-width: 700px) {
+  .restaurant-list{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .restaurant-list{
+    grid-template-columns: repeat(3,1fr);
+  }
+
+}
+
+@media screen and (min-width: 1200px) {  
+  .hero,
+  main {
+      margin: auto;
+      min-width: 1000px;
+      max-width: 1200px;
+  }
+}
